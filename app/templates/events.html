@@ -1,0 +1,13 @@
+{% extends "base.html" %} {% block content %} {% include "flash.html" %}
+
+<a href="/logout">[Log Out]</a> <br />
+<i>Hi, {{user}} </i>
+{% if events %}
+<ul>
+  {% for e in events %}
+  <li>
+    {{e.title}}
+  </li>
+  {% endfor %}
+</ul>
+{% else %} There are no events. {% endif %} {% endblock %}
